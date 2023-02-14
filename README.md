@@ -10,7 +10,7 @@ bundle install
 rails db:create db:migrate db:seed
 ```
 
-Thses commands might by needed :
+These commands might by needed too :
 ```
 yarn
 bundle exec rails assets:precompile

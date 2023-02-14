@@ -13,8 +13,8 @@ User.destroy_all
 Tag.destroy_all
 Gossip.destroy_all
 PrivateMessage.destroy_all
-Comment.destroy_all
 Like.destroy_all
+Comment.destroy_all
 
 10.times do |_| # Create 10 cities
   City.create(name: Faker::Address.city,
@@ -22,21 +22,21 @@ Like.destroy_all
 end
 
 10.times do |_| # Create 10 users
-  User.create(first_name: Faker::Name.first_name,
-              last_name: Faker::Name.last_name,
+  User.create(first_name: Faker::Movies::StarWars.call_squadron,
+              last_name: Faker::Movies::StarWars.specie,
               age: rand(18..60),
-              description: Faker::Lorem.paragraph,
+              description: Faker::Movies::StarWars.quote,
               city: City.all.sample)
   User.last.update(email: Faker::Internet.email(name: [User.last.first_name, User.last.last_name].join('.')))
 end
 
 10.times do |_| # Create 10 tags
-  Tag.create(title: '#' + Faker::Hobby.activity)
+  Tag.create(title: '#' + Faker::Movies::StarWars.droid)
 end
 
 20.times do |_| # Create 20 gossips
-  Gossip.create(title: Faker::Lorem.sentence,
-                content: Faker::Lorem.paragraph,
+  Gossip.create(title: Faker::Movies::StarWars.planet,
+                content: Faker::Quote.yoda,
                 user: User.all.sample)
   rand(1..4).times do |_i|
     Gossip.last.tags << Tag.all.sample
@@ -45,7 +45,7 @@ end
 end
 
 5.times do |_| # Create 5 private messages
-  PrivateMessage.create(content: Faker::Lorem.sentence,
+  PrivateMessage.create(content: Faker::Movies::StarWars.wookiee_sentence,
                         sender: User.all.sample)
   rand(1..3).times do |_i|
     PrivateMessage.last.recipients << User.all.sample
@@ -55,13 +55,13 @@ end
 20.times do |_| # Create 20 comments
   Comment.create(user: User.all.sample,
                  gossip: Gossip.all.sample,
-                 content: Faker::Lorem.sentence)
+                 content: Faker::Movies::StarWars.quote)
 end
 
 20.times do |_| # Create 20 comments of comments
   Comment.create(user: User.all.sample,
                  parent_comment: Comment.all.sample,
-                 content: Faker::Lorem.sentence)
+                 content: Faker::Movies::StarWars.quote)
 end
 
 10.times do |_| # Create 10 likes of gossips

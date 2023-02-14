@@ -1,15 +1,25 @@
 <div class="container-fluid">
   <br>
-  <h4>Welcome to the gossip platform !</h4><br>
-    <div class="row">
+
+  <div class="jumbotron">
+    <div class="container">
+      <br><br><br>
+      <h3 class="display-4 text-light">Welcome to the Star Wars gossip platform !</h3>
+      <br><br><br>
+      <p class="lead text-light">Spreading rumors are you here for, young Padawan?</p>
+      <br><br><br><br><br><br>
+    </div>
+  </div>
+
+    <div class="row justify-content-center">
       <% @gossips.each do |gossip| %>
-        <div class="card text-center col-sm-3 border-info mb-3" style="width: 18rem;">
+        <div class="card text-center col-sm-3 bg-secondary mb-3" style="width: 18rem;">
           <div class="card-body">
             <h5 class="card-title">Gossip nº <%= gossip.id %></br></h5>
             <p class="card-text">
             Author : <%= User.find(gossip.user_id.to_i).first_name %> <%= User.find(gossip.user_id.to_i).last_name %></br>
             Title : <%= gossip.title %> <br><br>
-            <a href="/home/<%= gossip.id %>/" class="btn btn-info" role="button">Learn more</a>
+            <a href="/home/<%= gossip.id %>/" class="btn btn-danger btn-outline-light" role="button">Learn more</a>
           </div>
         </div>
       <% end %>

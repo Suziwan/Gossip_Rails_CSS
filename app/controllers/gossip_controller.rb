@@ -1,7 +1,7 @@
 class GossipController < ApplicationController
   def home
     @gossips = Gossip.all
-    
+    @users = User.all
   end
 
   def show

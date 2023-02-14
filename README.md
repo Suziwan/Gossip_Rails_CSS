@@ -1,24 +1,18 @@
-# README
+# The Gossip Project
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Using Rails, MVC, postgreSQL, CSS, Bootstrap, etc
 
-Things you may want to cover:
+## Start the app
 
-* Ruby version
+You can start the app by doing :
+```
+bundle install
+rails db:create db:migrate db:seed
+```
 
-* System dependencies
+These commands might by needed too :
+```
+yarn
+bundle exec rails assets:precompile
+``` 
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...

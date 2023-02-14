@@ -1,0 +1,13 @@
+<div class="container-fluid">
+  <br>
+  <h4>Create a new gossip here</h4><br>
+  <form action="/" method="create">
+    <input type="hidden" name="authenticity_token"
+    value="<%= form_authenticity_token %>">
+    First name: 
+    <input type="text" name="first_name"><br><br>
+    Last name: 
+    <input type="text" name="last_name"><br><br>
+    <input type="submit" name="Send">
+  </form>
+</div>

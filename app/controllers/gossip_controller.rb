@@ -1,21 +1,42 @@
 class GossipController < ApplicationController
-  def home
+  def index
     @gossips = Gossip.all
-    @users = User.all
   end
 
   def show
-    @gossip = Gossip.find(params[:id].to_i)
+    @id = params[:id].to_i
+    @gossip = Gossip.find(@id)
     @author = User.find(@gossip.user_id)
   end
 
-  def team
+  def new
+    puts "*" * 60
+    puts "test new OK"
+    puts "*" * 60
   end
 
-  def contact
+  def create
+    puts "*" * 60
+    puts "test create OK"
+    puts params
+    puts "*" * 60
   end
 
-  def welcome
-    @user_name = params[:user_name]&.capitalize
+  def edit
+    puts "*" * 60
+    puts "test edit OK"
+    puts "*" * 60
+  end
+
+  def update
+    puts "*" * 60
+    puts "test update OK"
+    puts "*" * 60
+  end
+
+  def destroy
+    puts "*" * 60
+    puts "test destroy OK"
+    puts "*" * 60
   end
 end

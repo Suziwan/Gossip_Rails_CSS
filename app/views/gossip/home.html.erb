@@ -1,0 +1,16 @@
+<div class="container-fluid">
+<br>
+<h4>Welcome to the gossip platform !</h4><br>
+  <% @gossips.each do |gossip| %>
+    <div class="card w-75"> 
+      <div class="card-body">
+        <h5 class="card-title">Gossip nº <%= gossip.id %></br></h5>
+        <p class="card-text">
+        Title : <%= gossip.title %></br>
+        Content : <%= gossip.content %></br></p>
+        <a href="/home/<%= gossip.id %>/" class="btn btn-primary">Go to gossip nº <%= gossip.id %> page</a>
+      </div>
+    </div>
+    <br>
+  <% end %>
+</div>

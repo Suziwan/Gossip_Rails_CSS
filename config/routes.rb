@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  root 'gossip#home'
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  get '/home', to: 'gossip#home'
+  get '/home/:id', to: 'gossip#show'
+  get '/team', to: 'gossip#team'
+  get '/contact', to: 'gossip#contact'
+  get '/welcome', to: 'gossip#welcome'
+  get '/welcome/:user_name', to: 'gossip#welcome'
+  
+  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 end

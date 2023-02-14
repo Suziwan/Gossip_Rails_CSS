@@ -1,0 +1,9 @@
+<div class="container-fluid">
+  <br>
+  <h4>Here is the gossip nº <%= params[:id] %></h4><br>
+  <p>Author : <%= @author.first_name %> <%= @author.last_name %><br><br>
+    Title : <%= @gossip.title %><br>
+    Content : <%= @gossip.content %><br>
+    Creation date : <%= @gossip.created_at %>
+  </p>
+</div>

@@ -9,16 +9,17 @@ class GossipsController < ApplicationController
   end
 
   def new
-    puts "*" * 60
-    puts "test new OK"
-    puts "*" * 60
+    @gossip = Gossip.new(title: params[:title], content: params[:content]) 
   end
 
   def create
-    puts "*" * 60
-    puts "test create OK"
-    puts params
-    puts "*" * 60
+    @gossip = Gossip.new(title: params[:title], content: params[:content], user_id: rand(1..10))
+
+    if @gossip.save # essaie de sauvegarder en base @gossip
+      redirect_to gossips_path # si ça marche, il redirige vers la page d'index du site
+    else
+      render 'gossips/new' # sinon, il render la view new (qui est celle sur laquelle on est déjà)
+    end
   end
 
   def edit
@@ -29,12 +30,12 @@ class GossipsController < ApplicationController
     @gossip = Gossip.find(params[:id])
     post_params = params.require(:gossip).permit(:title, :content)
     @gossip.update(post_params)
-    redirect_to gossip_path
+    redirect_to gossips_path
   end
 
   def destroy
-    puts "*" * 60
-    puts "test destroy OK"
-    puts "*" * 60
+    @gossip = Gossip.find(params[:id])
+    @gossip.destroy
+    redirect_to gossips_path
   end
 end

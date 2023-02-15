@@ -1,12 +1,16 @@
 <div class="container-fluid">
   <br>
   <h4>Create a new gossip here</h4><br>
-  <form action= <%= gossips_path %> method="create">
-    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-    First name: 
-    <input type="text" name="first_name"><br><br>
-    Last name: 
-    <input type="text" name="last_name"><br><br>
-    <input type="submit" name="Send">
-  </form>
+    <%= form_tag url_for(action: 'create'), method: "post" do %>
+
+    <%= label_tag 'Title' %>
+    <%= text_field_tag 'title' %>
+    <br /> <br />
+
+    <%= label_tag 'Content' %>
+    <%= text_area_tag 'content' %>
+    <br /> <br />
+
+    <%= submit_tag "Create Gossip" %>
+  <% end %>
 </div>

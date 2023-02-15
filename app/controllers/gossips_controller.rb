@@ -1,11 +1,10 @@
 class GossipsController < ApplicationController
   def index
-    @gossips = Gossip.all
+    @gossips = Gossip.all.order(:id)
   end
 
   def show
-    @id = params[:id].to_i
-    @gossip = Gossip.find(@id)
+    @gossip = Gossip.find(params[:id])
     @author = User.find(@gossip.user_id)
   end
 
@@ -23,15 +22,14 @@ class GossipsController < ApplicationController
   end
 
   def edit
-    puts "*" * 60
-    puts "test edit OK"
-    puts "*" * 60
+    @gossip = Gossip.find(params[:id])
   end
 
   def update
-    puts "*" * 60
-    puts "test update OK"
-    puts "*" * 60
+    @gossip = Gossip.find(params[:id])
+    post_params = params.require(:gossip).permit(:title, :content)
+    @gossip.update(post_params)
+    redirect_to gossip_path
   end
 
   def destroy

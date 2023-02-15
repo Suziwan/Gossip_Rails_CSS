@@ -3,7 +3,8 @@
   <h4>Here is the gossip nº <%= params[:id] %></h4><br>
   <p>Author : <%= @author.first_name %> <%= @author.last_name %><br><br>
     Title : <%= @gossip.title %><br>
-    Content : <%= @gossip.content %><br>
-    Creation date : <%= @gossip.created_at %>
+    Content : <%= @gossip.content %><br><br>
+    Creation date : <%= @gossip.created_at %><br><br>
+    <a class="btn btn-danger btn-lg" href="/gossips/<%= params[:id] %>/edit" role="button">Edit this gossip</a>
   </p>
 </div>

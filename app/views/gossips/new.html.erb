@@ -1,7 +1,7 @@
 <div class="container-fluid">
   <br>
   <h4>Create a new gossip here</h4><br>
-  <form action= <%= gossip_path %> method="create">
+  <form action= <%= gossips_path %> method="create">
     <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
     First name: 
     <input type="text" name="first_name"><br><br>

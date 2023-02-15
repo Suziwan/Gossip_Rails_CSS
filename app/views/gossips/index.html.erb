@@ -8,7 +8,7 @@
       <br><br><br>
       <p class="lead text-light">Spreading rumors are you here for, young Padawan?</p>
       <br>
-      <a class="btn btn-success btn-outline-light btn-lg" href="/gossip/new" role="button">Start a new gossip</a>
+      <a class="btn btn-success btn-outline-light btn-lg" href="/gossips/new" role="button">Start a new gossip</a>
       <br><br><br><br><br>
     </div>
   </div>
@@ -21,7 +21,7 @@
             <p class="card-text">
             Author : <%= User.find(gossip.user_id.to_i).first_name %> <%= User.find(gossip.user_id.to_i).last_name %></br>
             Title : <%= gossip.title %> <br><br>
-            <a href="/gossip/<%= gossip.id %>/" class="btn btn-danger btn-outline-light" role="button">Learn more</a>
+            <a href="/gossips/<%= gossip.id %>/" class="btn btn-danger btn-outline-light" role="button">Learn more</a>
           </div>
         </div>
       <% end %>

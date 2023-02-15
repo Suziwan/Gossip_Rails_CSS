@@ -1,13 +1,13 @@
 Rails.application.routes.draw do
-  root 'gossip#index'
+  root 'gossips#index'
 
-  get '/gossip', to: 'gossip#index'
-  post'/gossip', to: 'gossip#create'
-  get '/gossip/new', to: 'gossip#new'
-  get '/gossip/:id', to: 'gossip#show'
-  get '/gossip/:id/edit', to: 'gossip#edit'
-  put '/gossip/:id', to: 'gossip#update'
-  delete '/gossip/:id', to: 'gossip#destroy'
+  get '/gossips', to: 'gossips#index'
+  post'/gossips', to: 'gossips#create'
+  get '/gossips/new', to: 'gossips#new'
+  get '/gossips/:id', to: 'gossips#show'
+  get '/gossips/:id/edit', to: 'gossips#edit'
+  put '/gossips/:id', to: 'gossips#update'
+  delete '/gossips/:id', to: 'gossips#destroy'
 
   get '/team', to: 'team#team'
 

@@ -47,13 +47,13 @@ end
   end
 end
 
-20.times do |_| # Create 20 comments
+50.times do |_| # Create 50 comments
   Comment.create(user: User.all.sample,
                  gossip: Gossip.all.sample,
                  content: Faker::Movies::StarWars.quote)
 end
 
-20.times do |_| # Create 20 comments of comments
+50.times do |_| # Create 50 comments of comments
   Comment.create(user: User.all.sample,
                  parent_comment: Comment.all.sample,
                  content: Faker::Movies::StarWars.quote)

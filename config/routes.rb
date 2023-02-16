@@ -13,16 +13,10 @@ Rails.application.routes.draw do
   # delete '/gossips/:id', to: 'gossips#destroy'
 
   resources :users, :only => [:index, :show]
-  # get '/users', to: 'users#index'
-  # get '/users/:id', to: 'users#show'
 
   resources :cities, :only => [:index, :show]
-  # get '/cities', to: 'cities#index'
-  # get '/cities/:id', to: 'cities#show'
 
-  resources :comments, :only => [:index, :edit]
-  # get '/comments', to: 'comments#index'
-  # get '/comments/:id/edit', to: 'comments#edit'
+  resources :comments, :except => [:show]
 
   get '/team', to: 'team#team' # to rename later
 

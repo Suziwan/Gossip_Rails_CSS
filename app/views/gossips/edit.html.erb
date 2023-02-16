@@ -3,6 +3,7 @@
   <h4>Edit a gossip here</h4><br>
   <div class="my-form">
     <%= form_with model: @gossip do |f| %>
+      <input type="hidden" name="authenticity_token" value=<%= form_authenticity_token %> >
       <div class="form-group">
         <label>Title:</label>
         <%= f.text_field :title, class: 'form-control' %>

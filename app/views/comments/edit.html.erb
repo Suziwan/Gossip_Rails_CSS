@@ -1,13 +1,9 @@
 <div class="container-fluid">
   <br>
-  <h4>Edit a comment here (this doesn't work yet)</h4><br>
+  <h4>Edit a comment here (destroy doesn't work yet, foreign key to remove)</h4><br>
   <div class="my-form">
     <%= form_with model: @comment do |f| %>
-      <div class="form-group">
-        <label>Gossip number :</label>
-        <%= f.text_field :gossip_id, class: 'form-control' %>
-      </div>
-      <br>
+      <input type="hidden" name="authenticity_token" value=<%= form_authenticity_token %> >
       <div class="form-group">
         <label>Content :</label>
         <%= f.text_area :content, class: 'form-control' %>
@@ -16,8 +12,10 @@
       <div class="form-group">
         <button type="submit" class='btn btn-success'>Modify the comment</button>
       </div>
+      <br>
+      <div class="form-group">
+        <%= button_to 'Delete this comment', comment_path, method: :delete, class: 'btn btn-danger' %>
+      </div>
     <% end %>
-    <br>
-    <%= button_to 'Delete this comment', gossip_path, method: :delete, class: 'btn btn-danger' %>
   </div>
 </div>

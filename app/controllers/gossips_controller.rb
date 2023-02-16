@@ -13,6 +13,7 @@ class GossipsController < ApplicationController
 
   def new
     @gossip = Gossip.new
+    @tags = Tag.all
   end
 
   def create

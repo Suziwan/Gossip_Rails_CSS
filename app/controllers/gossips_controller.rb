@@ -5,11 +5,12 @@ class GossipsController < ApplicationController
 
   def show
     @gossip = Gossip.find(params[:id])
-    @author = User.find(@gossip.user_id)
+    @user = User.find(@gossip.user_id)
+    @city = City.find(@user.city_id)
   end
 
   def new
-    @gossip = Gossip.new(title: params[:title], content: params[:content]) 
+    @gossip = Gossip.new
   end
 
   def create

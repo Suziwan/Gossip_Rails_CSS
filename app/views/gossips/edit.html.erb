@@ -2,7 +2,7 @@
   <br>
   <h4>Edit a gossip here</h4><br>
   <div class="my-form">
-    <%= form_for @gossip do |f| %>
+    <%= form_with model: @gossip do |f| %>
       <div class="form-group">
         <label>Title :</label>
         <%= f.text_field :title, class: 'form-control' %>
@@ -15,8 +15,9 @@
       <br>
       <div class="form-group">
         <button type="submit" class='btn btn-success'>Modify the gossip</button>
-        <%= button_to 'Delete this gossip', gossip_path, method: :delete, class: 'btn btn-danger' %>
       </div>
     <% end %>
+    <br>
+    <%= button_to 'Delete this gossip', gossip_path, method: :delete, class: 'btn btn-danger' %>
   </div>
 </div>

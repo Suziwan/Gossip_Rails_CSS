@@ -1,10 +1,12 @@
 <div class="container-fluid">
   <br>
   <h4>Here is the gossip nº <%= params[:id] %></h4><br>
-  <p>Author : <%= @author.first_name %> <%= @author.last_name %><br><br>
-    Title : <%= @gossip.title %><br>
-    Content : <%= @gossip.content %><br><br>
-    Creation date : <%= @gossip.created_at %><br><br>
+  <p><strong>Author : </strong><a href="/users/<%= @gossip.user_id %>/"><%= @user.first_name %> <%= @user.last_name %></a><br>
+    <strong>City : </strong><a href="/cities/<%= @user.city_id %>/"><%= @city.name %></a><br><br>
+    <strong>Title : </strong><%= @gossip.title %><br>
+    <strong>Content : </strong><%= @gossip.content %><br><br>
+    <strong>Creation date : </strong><%= @gossip.created_at %><br>
+    <strong>Last update : </strong><%= @gossip.updated_at %><br><br>
     <a class="btn btn-danger btn-lg" href="/gossips/<%= params[:id] %>/edit" role="button">Edit this gossip</a>
   </p>
 </div>

@@ -17,7 +17,7 @@ Like.destroy_all
 Comment.destroy_all
 
 10.times do |_| # Create 10 cities
-  City.create(name: Faker::Address.city,
+  City.create(name: Faker::Movies::StarWars.planet,
               zip_code: Faker::Address.zip_code)
 end
 
@@ -35,7 +35,7 @@ end
 end
 
 20.times do |_| # Create 20 gossips
-  Gossip.create(title: Faker::Movies::StarWars.planet,
+  Gossip.create(title: Faker::Movies::StarWars.character,
                 content: Faker::Quote.yoda,
                 user: User.all.sample)
   rand(1..4).times do |_i|

@@ -1,20 +1,18 @@
 <div class="container-fluid">
   <br>
-
-  <div class="jumbotron">
-    <div class="container">
-      <br><br><br>
-      <h3 class="display-4 text-light">Welcome to the Star Wars gossip platform !</h3>
-      <br><br><br>
-      <p class="lead text-light">Spreading rumors are you here for, young Padawan?</p>
-      <br><br><br>
-      <a class="btn btn-success btn-outline-light btn-lg" href="<%= new_gossip_path %>" role="button">Start a new gossip</a>
-      <br><br><br><br>
-    </div>
-  </div>
-
+  <h4>Profile of user nº <%= params[:id] %></h4><br>
+    <p><strong>First name : </strong><%= @user.first_name %><br>
+    <strong>Last name : </strong><%= @user.last_name %><br>
+    <br>
+    <strong>Age : </strong><%= @user.age %><br>
+    <strong>City : </strong><%= @city.name %><br>
+    <br>
+    <strong>Description : </strong><%= @user.description %><br>
+    <strong>Email : </strong><%= @user.email %><br>
+    <br>
+    All gossips from this user :<br>
     <div class="row justify-content-center">
-      <% @gossips.each do |gossip| %>
+      <% @user_gossips.each do |gossip| %>
         <div class="card text-center col-sm-3 bg-secondary mb-3" style="width: 18rem;">
           <div class="card-body">
             <h5 class="card-title">Gossip nº <%= gossip.id %><br></h5>
@@ -26,4 +24,5 @@
         </div>
       <% end %>
     </div>
+  </p>
 </div>

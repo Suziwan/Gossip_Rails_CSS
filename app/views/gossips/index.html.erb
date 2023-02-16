@@ -17,10 +17,11 @@
       <% @gossips.each do |gossip| %>
         <div class="card text-center col-sm-3 bg-secondary mb-3" style="width: 18rem;">
           <div class="card-body">
-            <h5 class="card-title">Gossip nº <%= gossip.id %></h5><br>
+            <h5 class="card-title">Gossip nº <%= gossip.id %></h5>
             <p class="card-text">
-            Author : <%= User.find(gossip.user_id.to_i).first_name %> <%= User.find(gossip.user_id.to_i).last_name %><br>
-            Title : <%= gossip.title %><br>
+            Author: <%= User.find(gossip.user_id.to_i).first_name %> <%= User.find(gossip.user_id.to_i).last_name %><br>
+            Title: <%= gossip.title %><br>
+            Comments: <span class="badge bg-light text-dark"><%= Comment.where(gossip_id: gossip.id).count %></span><br>
             <br>
             <a href="/gossips/<%= gossip.id %>/" class="btn btn-danger btn-outline-light" role="button">Learn more</a>
           </div>

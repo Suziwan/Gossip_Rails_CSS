@@ -20,6 +20,10 @@ Rails.application.routes.draw do
   # get '/cities', to: 'cities#index'
   # get '/cities/:id', to: 'cities#show'
 
+  resources :comments, :only => [:index, :edit]
+  # get '/comments', to: 'comments#index'
+  # get '/comments/:id/edit', to: 'comments#edit'
+
   get '/team', to: 'team#team' # to rename later
 
   get '/contact', to: 'contact#contact' # to rename later

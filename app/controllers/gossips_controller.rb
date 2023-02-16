@@ -1,12 +1,14 @@
 class GossipsController < ApplicationController
   def index
     @gossips = Gossip.all.order(:id)
+    @comments = Comment.all
   end
 
   def show
     @gossip = Gossip.find(params[:id])
     @user = User.find(@gossip.user_id)
     @city = City.find(@user.city_id)
+    @gossip_comments = Comment.where(gossip_id: params[:id])
   end
 
   def new

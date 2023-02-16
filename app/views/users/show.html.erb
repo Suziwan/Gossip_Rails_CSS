@@ -2,25 +2,27 @@
   <br>
   <h4>Profile of <%= @user.first_name %> <%= @user.last_name %></h4><br>
     <div class="my-box">
-      <p><strong>First name : </strong><%= @user.first_name %><br>
-      <strong>Last name : </strong><%= @user.last_name %><br>
+      <p><strong>First name: </strong><%= @user.first_name %><br>
+      <strong>Last name: </strong><%= @user.last_name %><br>
       <br>
-      <strong>Age : </strong><%= @user.age %><br>
-      <strong>City : </strong><%= @city.name %><br>
+      <strong>Age: </strong><%= @user.age %><br>
+      <strong>City: </strong><%= @city.name %><br>
       <br>
-      <strong>Description : </strong><%= @user.description %><br>
-      <strong>Email : </strong><%= @user.email %><br>
+      <strong>Description: </strong><%= @user.description %><br>
+      <strong>Email: </strong><%= @user.email %><br>
     </div>
     <br>
-    All gossips from this user :<br>
+    All gossips from this user:<br>
     <div class="row justify-content-center">
       <% @user_gossips.each do |gossip| %>
         <div class="card text-center col-sm-3 bg-secondary mb-3" style="width: 18rem;">
           <div class="card-body">
-            <h5 class="card-title">Gossip nº <%= gossip.id %><br></h5>
+            <h5 class="card-title">Gossip nº <%= gossip.id %></h5>
             <p class="card-text">
-            Author : <%= User.find(gossip.user_id.to_i).first_name %> <%= User.find(gossip.user_id.to_i).last_name %><br>
-            Title : <%= gossip.title %> <br><br>
+            Author: <%= User.find(gossip.user_id.to_i).first_name %> <%= User.find(gossip.user_id.to_i).last_name %><br>
+            Title: <%= gossip.title %> <br>
+            Comments: <span class="badge bg-light text-dark"><%= Comment.where(gossip_id: gossip.id).count %></span><br>
+            <br>
             <a href="/gossips/<%= gossip.id %>/" class="btn btn-danger btn-outline-light" role="button">Learn more</a>
           </div>
         </div>

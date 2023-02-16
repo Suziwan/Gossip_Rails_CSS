@@ -1,14 +1,16 @@
 <div class="container-fluid">
   <br>
-  <h4>Profile of user nº <%= params[:id] %></h4><br>
-    <p><strong>First name : </strong><%= @user.first_name %><br>
-    <strong>Last name : </strong><%= @user.last_name %><br>
-    <br>
-    <strong>Age : </strong><%= @user.age %><br>
-    <strong>City : </strong><%= @city.name %><br>
-    <br>
-    <strong>Description : </strong><%= @user.description %><br>
-    <strong>Email : </strong><%= @user.email %><br>
+  <h4>Profile of <%= @user.first_name %> <%= @user.last_name %></h4><br>
+    <div class="my-box">
+      <p><strong>First name : </strong><%= @user.first_name %><br>
+      <strong>Last name : </strong><%= @user.last_name %><br>
+      <br>
+      <strong>Age : </strong><%= @user.age %><br>
+      <strong>City : </strong><%= @city.name %><br>
+      <br>
+      <strong>Description : </strong><%= @user.description %><br>
+      <strong>Email : </strong><%= @user.email %><br>
+    </div>
     <br>
     All gossips from this user :<br>
     <div class="row justify-content-center">
@@ -24,5 +26,7 @@
         </div>
       <% end %>
     </div>
+    <br>
+    <a href="/cities/">See all users</a>
   </p>
 </div>

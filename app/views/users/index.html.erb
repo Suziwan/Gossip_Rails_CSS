@@ -1,5 +1,12 @@
 <div class="container-fluid">
   <br>
-  <h4>Display here all users</h4><br>
+  <h4>List of all users</h4><br>
+  <div class="list-group">
+    <% @users.each do |user| %>
+      <a href="/users/<%= user.id %>/" class="list-group-item list-group-item-action">
+        User nº <%= user.id %> : <%= user.first_name %> <%= user.last_name %><br>
+      </a>
+    <% end %>
+  </div>
   </p>
 </div>

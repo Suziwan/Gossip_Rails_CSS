@@ -1,5 +1,12 @@
 <div class="container-fluid">
   <br>
-  <h4>Display here all cities</h4><br>
+  <h4>List of all cities</h4><br>
+  <div class="list-group">
+    <% @cities.each do |city| %>
+      <a href="/cities/<%= city.id %>/" class="list-group-item list-group-item-action">
+        City nº <%= city.id %> : <%= city.name %><br>
+      </a>
+    <% end %>
+  </div>
   </p>
 </div>

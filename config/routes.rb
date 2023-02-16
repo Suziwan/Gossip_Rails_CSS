@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'rails/s'
   root 'gossips#index'
 
   resources :gossips

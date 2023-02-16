@@ -13,9 +13,7 @@
         <button type="submit" class='btn btn-success'>Modify the comment</button>
       </div>
       <br>
-      <div class="form-group">
-        <%= button_to 'Delete this comment', comment_path, method: :delete, class: 'btn btn-danger' %>
-      </div>
     <% end %>
+    <%= button_to 'Delete this comment', comment_path, method: :delete, class: 'btn btn-danger' %>
   </div>
 </div>

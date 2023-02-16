@@ -5,7 +5,6 @@ class CreatePrivateMessages < ActiveRecord::Migration[7.0]
       t.belongs_to :sender, index: true
       t.timestamps
     end
-    
     create_join_table :private_messages, :users
   end
 end

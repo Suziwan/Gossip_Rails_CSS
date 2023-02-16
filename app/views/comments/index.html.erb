@@ -4,8 +4,8 @@
     <div class="list-group">
       <% @comments.each do |comment| %>
         <a href="/comments/<%= comment.id %>/edit" class="list-group-item list-group-item-action">
-          <strong>Comment nº <%= comment.id %></strong> <br>
-          User nº <%= comment.user_id %> on gossip nº <%= comment.gossip_id %>/comment nº <%= comment.parent_comment_id %>:<br> 
+          <strong><%= User.find(comment.user_id.to_i).first_name %> 
+          <%= User.find(comment.user_id.to_i).last_name %> on gossip nº <%= comment.gossip_id %>:</strong><br> 
           <%= comment.content %><br>
         </a>
       <% end %>

@@ -36,7 +36,6 @@ end
   rand(1..4).times do |_i|
     Gossip.last.tags << Tag.all.sample
   end
-  # Gossip.last.tags.uniq!
 end
 
 5.times do |_| # Create 5 private messages
@@ -47,15 +46,9 @@ end
   end
 end
 
-50.times do |_| # Create 50 comments
+100.times do |_| # Create 100 comments
   Comment.create(user: User.all.sample,
                  gossip: Gossip.all.sample,
-                 content: Faker::Movies::StarWars.quote)
-end
-
-50.times do |_| # Create 50 comments of comments
-  Comment.create(user: User.all.sample,
-                 parent_comment: Comment.all.sample,
                  content: Faker::Movies::StarWars.quote)
 end
 

@@ -2,22 +2,21 @@
   <br>
   <h4>Create a new gossip here</h4><br>
   <div class="my-form">
-    <%= form_tag url_for(action: 'create'), method: "post" do %>
+    <%= form_with model: @gossip do |f| %>
       <input type="hidden" name="authenticity_token" value=<%= form_authenticity_token %> >
-      <%= label_tag 'Title:' %><br>
-      <%= text_field_tag 'title', nil, size: 100 %>
-      <br><br>
-      <%= label_tag 'Content:' %><br>
-      <%= text_area_tag 'content', nil, rows: 3 %>
-      <br><br>
-      <label for="tags">Add a tag:</label><br>
-      <select id="tags" name="taglist" form="tagform">
-        <% @tags.each do |tag| %>
-          <option tag="title"><%= tag.title %></option>
-        <% end %>
-      </select>
-      <br><br>
-      <%= submit_tag "Save your gossip", class: 'btn btn-success'%>
+      <div class="form-group">
+        <label>Title :</label>
+        <%= f.text_field :title, class: 'form-control' %>
+      </div>
+      <br>
+      <div class="form-group">
+        <label>Content :</label>
+        <%= f.text_area :content, class: 'form-control' %>
+      </div>
+      <br>
+      <div class="form-group">
+        <button type="submit" class='btn btn-success'>Save the gossip</button>
+      </div>
     <% end %>
   </div>
 </div>

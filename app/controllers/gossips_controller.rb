@@ -17,7 +17,7 @@ class GossipsController < ApplicationController
   end
 
   def create
-    @gossip = Gossip.new(title: params[:title], content: params[:content], user_id: rand(1..10))
+    @gossip = Gossip.new(title: params[:gossip][:title], content: params[:gossip][:content], user_id: rand(1..10))
 
     if @gossip.save # essaie de sauvegarder en base @gossip
       redirect_to gossips_path # si ça marche, il redirige vers la page d'index du site

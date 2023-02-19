@@ -10,9 +10,21 @@
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
 
-<style> 
+<style>
+.navbar{
+  padding: 10px;
+}
+
 .jumbotron {
   background-image: url("https://hips.hearstapps.com/digitalspyuk.cdnds.net/16/05/1454599237-movies-star-wars-yoda.jpg?resize=980:*");
+  background-size: cover;
+}
+
+.bg {
+  background-image: url("https://e0.pxfuel.com/wallpapers/101/248/desktop-wallpaper-imgur-star-wars-death-star-star-wars-background-star-wars-galaxy.jpg");
+  height: 100%;
+  background-position: top;
+  background-repeat: no-repeat;
   background-size: cover;
 }
 
@@ -40,12 +52,11 @@ padding-right: 30px;
 </style>
 
   <body>
-  <nav class="navbar navbar-expand navbar-dark bg-dark">
+  <nav class="navbar navbar-expand navbar-dark bg-dark justify-content-between">
     <a class="navbar-brand" href="/">The Gossip Project</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
@@ -62,6 +73,10 @@ padding-right: 30px;
         </li>
       </ul>
     </div>
+    <form class="form-inline">
+      <a class="btn btn-primary btn-outline-light" href="<%= new_user_path %>" role="button">Login</a>
+      <a class="btn btn-primary btn-outline-light" href="<%= new_user_path %>" role="button">Create account</a>
+    </form>
   </nav>
     <%= yield %>
   </body>

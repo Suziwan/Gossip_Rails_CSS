@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  include SessionsHelper
+  
   def index
     @users = User.all
   end
@@ -12,6 +14,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
+      log_in(user)
       flash[:success] = "Your account was created"
       redirect_to @user
     else

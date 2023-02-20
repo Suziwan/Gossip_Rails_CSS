@@ -1,4 +1,6 @@
 class GossipsController < ApplicationController
+  include SessionsHelper
+  
   def index
     @gossips = Gossip.all.order(:id)
     @comments = Comment.all
@@ -18,11 +20,12 @@ class GossipsController < ApplicationController
 
   def create
     @gossip = Gossip.new(title: params[:gossip][:title], content: params[:gossip][:content], user_id: rand(1..10))
+    @gossip.user = current_user
 
     if @gossip.save # essaie de sauvegarder en base @gossip
-      redirect_to gossips_path # si ça marche, il redirige vers la page d'index du site
+      redirect_to root_path # si ça marche, il redirige vers la page d'index du site
     else
-      render 'gossips/new' # sinon, il render la view new (qui est celle sur laquelle on est déjà)
+      render :new # sinon, il render la view new (qui est celle sur laquelle on est déjà)
     end
   end
 

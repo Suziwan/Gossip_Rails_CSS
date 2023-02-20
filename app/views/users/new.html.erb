@@ -2,24 +2,24 @@
   <br>
   <h4> Create an account </h4>
   <div class="my-form">
-    <%= form_with model: @user do |form|%>
+    <%= form_with model: @user do |form| %>
       <div class="mb-3">
         <%= form.label :first_name %><br>
-        <%= form.text_field :first_name %>
+        <%= form.text_field :first_name, class: 'form-control'%>
         <% @user.errors.full_messages_for(:first_name).each do |message| %>
           <div><%= message %></div>
         <% end %>
       </div>
       <div class="mb-3">
         <%= form.label :name %><br>
-        <%= form.text_field :last_name %>
+        <%= form.text_field :last_name, class: 'form-control' %>
         <% @user.errors.full_messages_for(:last_name).each do |message| %>
           <div><%= message %></div>
         <% end %>
       </div>
       <div class="mb-3">
         <%= form.label :description %><br>
-        <%= form.text_area :description %>
+        <%= form.text_field :description, class: 'form-control' %>
         <% @user.errors.full_messages_for(:description).each do |message| %>
           <div><%= message %></div>
         <% end %>
@@ -30,21 +30,21 @@
       </div>
       <div class="mb-3">
         <%= form.label :age %><br>
-        <%= form.text_field :age %>
+        <%= form.text_field :age, class: 'form-control'%>
         <% @user.errors.full_messages_for(:age).each do |message| %>
           <div><%= message %></div>
         <% end %>
       </div>
       <div class="mb-3">
         <%= form.label :email %><br>
-        <%= form.text_field :email %>
+        <%= form.text_field :email, class: 'form-control' %>
         <% @user.errors.full_messages_for(:email).each do |message| %>
           <div><%= message %></div>
         <% end %>
       </div>
       <div class="mb-3">
         <%= form.label :password %><br>
-        <%= form.password_field :password %>
+        <%= form.password_field :password, class: 'form-control' %>
         <% @user.errors.full_messages_for(:password).each do |message| %>
           <div><%= message %></div>
         <% end %>

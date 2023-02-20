@@ -8,21 +8,31 @@ User.destroy_all
 Tag.destroy_all
 Gossip.destroy_all
 PrivateMessage.destroy_all
-Like.destroy_all
 Comment.destroy_all
+Like.destroy_all
 
 10.times do |_| # Create 10 cities
   City.create(name: Faker::Movies::StarWars.planet,
               zip_code: Faker::Address.zip_code)
 end
 
+User.create(first_name: 'Anne',
+  last_name: 'Onyme',
+  age: 14,
+  description: "Salut moi c'est Anne et j'adore les potins !",
+  city: City.all.sample,
+  email: 'anne.onyme@gmail.com',
+  password: 'foobar')
+
 10.times do |_| # Create 10 users
-  User.create(first_name: Faker::Movies::StarWars.call_squadron,
+  user = User.new(first_name: Faker::Movies::StarWars.call_squadron,
               last_name: Faker::Movies::StarWars.specie,
               age: rand(18..60),
               description: Faker::Movies::StarWars.quote,
-              city: City.all.sample)
-  User.last.update(email: Faker::Internet.email(name: [User.last.first_name, User.last.last_name].join('.')))
+              city: City.all.sample,
+              password: Faker::Internet.password(min_length: 6, max_length: 10))
+  user.update(email: Faker::Internet.email(name: [User.last.first_name, User.last.last_name].join('.')))
+  user.save!
 end
 
 10.times do |_| # Create 10 tags

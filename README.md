@@ -20,6 +20,8 @@ rails s
 
 ## Website Overview
 
+This website has not been published, thus, here are some screenshot for a quick overview:  
+
 <kbd>
   <img src=/GossipStarWars_Home_1.png width="100%">
 </kbd>

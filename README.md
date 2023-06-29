@@ -20,3 +20,23 @@ bundle exec rails assets:precompile
 ``` 
 
 ## Website Overview:
+
+<kbd>
+  <img src=/GossipStarWars_Home_1.png width="100%">
+</kbd>
+&nbsp
+
+<kbd>
+  <img src=/GossipStarWars_Home_2.png width="100%">
+</kbd>
+&nbsp
+
+<kbd>
+  <img src=/GossipStarWars_Login.png width="100%">
+</kbd>
+&nbsp
+
+<kbd>
+  <img src=/GossipStarWars_Profile.png width="100%">
+</kbd>
+&nbsp

@@ -17,11 +17,11 @@ Like.destroy_all
 end
 
 User.create(first_name: 'Anne',
-  last_name: 'Onyme',
+  last_name: 'Onymus',
   age: 14,
-  description: "Salut moi c'est Anne et j'adore les potins !",
+  description: "Hey, I'm Anne and I love gossips!",
   city: City.all.sample,
-  email: 'anne.onyme@gmail.com',
+  email: 'anne.onymus@gmail.com',
   password: 'foobar')
 
 10.times do |_| # Create 10 users
